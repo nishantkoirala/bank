@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BusinessCustomer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBankManagementSystem</a> &gt; <a href="index.source.html" class="el_package">com.itexps.shoppingcart.mybankmanagementsystem</a> &gt; <span class="el_source">BusinessCustomer.java</span></div><h1>BusinessCustomer.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.itexps.shoppingcart.mybankmanagementsystem;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author nishant.koirala
+ */
+public class BusinessCustomer extends Customer {
+    private String Buss_Name;
+        private String Buss_Type;
+        private int ein;
+        
+         @Override
+        public void addBankCustomer(){
+<span class="nc" id="L20">            super.addBankCustomer();</span>
+<span class="nc" id="L21">            super.setType(&quot;B&quot;);</span>
+<span class="nc" id="L22">            Scanner sc2 = new Scanner(System.in);</span>
+<span class="nc" id="L23">            System.out.println(&quot;Enter Type of Business :&quot;);</span>
+<span class="nc" id="L24">            this.Buss_Type = sc2.nextLine();</span>
+<span class="nc" id="L25">        }</span>
+        
+        public BusinessCustomer editBankCustomer (BusinessCustomer buscustomer) {
+<span class="nc" id="L28">            Scanner sc1 = new Scanner(System.in);</span>
+            String new_name, new_address, new_businesstype;
+            int new_phone;
+<span class="nc" id="L31">            System.out.println(&quot;Enter new details&quot;);</span>
+<span class="nc" id="L32">            System.out.println(&quot;--------------------&quot;);</span>
+<span class="nc" id="L33">            System.out.println(&quot;Enter new name : &quot;);</span>
+<span class="nc" id="L34">            new_name = sc1.nextLine();</span>
+<span class="nc" id="L35">            buscustomer.setFullname(new_name);</span>
+<span class="nc" id="L36">            System.out.println(&quot;Enter new phone number :&quot;);</span>
+<span class="nc" id="L37">            new_phone = sc1.nextInt();</span>
+<span class="nc" id="L38">            buscustomer.setPhone(new_phone);</span>
+<span class="nc" id="L39">            System.out.println(&quot;Enter new address :&quot;);</span>
+<span class="nc" id="L40">            new_address = sc1.nextLine();</span>
+<span class="nc" id="L41">            buscustomer.setAddress(new_address);</span>
+<span class="nc" id="L42">            System.out.println(&quot;Enter new type of business :&quot;);</span>
+<span class="nc" id="L43">            new_businesstype = sc1.nextLine();</span>
+<span class="nc" id="L44">            buscustomer.setBuss_Type(new_businesstype);</span>
+            String answer;
+<span class="nc bnc" id="L46" title="All 2 branches missed.">            if(buscustomer.getChk_acct().getAcct_id() == 0) {</span>
+<span class="nc" id="L47">                System.out.println(&quot;Does this customer want a CHECKING ACCOUNT ? (y/Y) or (n/N&quot;);</span>
+<span class="nc" id="L48">                answer = sc1.nextLine();</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">                if (answer.equalsIgnoreCase(&quot;y&quot;)){</span>
+<span class="nc" id="L50">                    this.chk_acct.addBankAccount(buscustomer.getCust_id());</span>
+                }
+            }
+          String answer1;
+<span class="nc bnc" id="L54" title="All 2 branches missed.">          if (buscustomer.getSav_acct().getAcct_id() == 0) {</span>
+<span class="nc" id="L55">              System.out.println(&quot;Does this customer want a SAVING ACCOUNT ? (y/Y) or (n/N)&quot;);</span>
+<span class="nc" id="L56">              answer1 = sc1.nextLine();</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">              if (answer1.equalsIgnoreCase(&quot;y&quot;)) {</span>
+<span class="nc" id="L58">                  this.sav_acct.addBankAccount(buscustomer.getCust_id());</span>
+              }
+            
+        }
+        String answer2;
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        if (buscustomer.getFd_acct().getAcct_id() == 0) {</span>
+<span class="nc" id="L64">            System.out.println(&quot;Does this customer want a FD ACCOUNT ? (y/Y) or (n/N)&quot;);</span>
+<span class="nc" id="L65">            answer2 = sc1.nextLine();</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">            if(answer2.equalsIgnoreCase(&quot;y&quot;)) {</span>
+<span class="nc" id="L67">                this.fd_acct.addBankAccount(buscustomer.getCust_id());</span>
+            }
+        }
+        
+<span class="nc" id="L71"> return buscustomer ;</span>
+        }
+
+      
+
+      
+
+    
+
+    public String getBuss_Name() {
+<span class="fc" id="L81">        return Buss_Name;</span>
+    }
+
+    public void setBuss_Name(String Buss_Name) {
+<span class="nc" id="L85">        this.Buss_Name = Buss_Name;</span>
+<span class="nc" id="L86">    }</span>
+
+    public String getBuss_Type() {
+<span class="fc" id="L89">        return Buss_Type;</span>
+    }
+
+    public void setBuss_Type(String Buss_Type) {
+<span class="nc" id="L93">        this.Buss_Type = Buss_Type;</span>
+<span class="nc" id="L94">    }</span>
+
+    public int getEin() {
+<span class="fc" id="L97">        return ein;</span>
+    }
+
+    public void setEin(int ein) {
+<span class="nc" id="L101">        this.ein = ein;</span>
+<span class="nc" id="L102">    }</span>
+
+<span class="fc" id="L104">    public BusinessCustomer() {</span>
+        
+<span class="fc" id="L106">    }</span>
+
+    public BusinessCustomer(String Buss_Name, String Buss_Type, int ein, int cust_id, String fullname, int phone, String email, String address) {
+<span class="fc" id="L109">        super(cust_id, fullname, phone, email, address);</span>
+<span class="fc" id="L110">        this.Buss_Name = Buss_Name;</span>
+<span class="fc" id="L111">        this.Buss_Type = Buss_Type;</span>
+<span class="fc" id="L112">        this.ein = ein;</span>
+<span class="fc" id="L113">    }</span>
+    
+   
+
+
+
+  @Override
+    public String toString() {
+<span class="nc" id="L121">        return &quot;Business Customer -&gt;  Name : &quot; + this.getFullname() + &quot;| Customer ID : &quot; + this.getCust_id() + &quot;| Phone : &quot; + this.getPhone() + &quot;| Address : &quot; + this.getAddress() + &quot;| Type_of_business=&quot; + Buss_Type + &quot;\n&quot;;</span>
+    }
+
+    
+
+   
+    
+
+    
+
+    
+
+   
+
+    
+
+   
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

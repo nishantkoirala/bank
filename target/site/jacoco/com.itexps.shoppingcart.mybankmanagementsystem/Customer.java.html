@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Customer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBankManagementSystem</a> &gt; <a href="index.source.html" class="el_package">com.itexps.shoppingcart.mybankmanagementsystem</a> &gt; <span class="el_source">Customer.java</span></div><h1>Customer.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.itexps.shoppingcart.mybankmanagementsystem;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author nishant.koirala
+ */
+public class Customer {
+    private int cust_id;
+    private String fullname;
+    private int phone;
+    private String email;
+    private String address;
+    private String type;
+   
+            
+    
+<span class="fc" id="L24">    private ArrayList&lt;Chk_Account&gt; chk_acct_List = new ArrayList&lt;Chk_Account&gt;();</span>
+<span class="fc" id="L25">    private ArrayList&lt;Sav_Account&gt; sav_acct_List = new ArrayList&lt;Sav_Account&gt;();</span>
+<span class="fc" id="L26">    private ArrayList&lt;FD_Account&gt; fd_acct_List = new ArrayList&lt;FD_Account&gt;();</span>
+<span class="fc" id="L27">    public ArrayList&lt;BusinessCustomer&gt; buscustomerList = new ArrayList&lt;BusinessCustomer&gt;();</span>
+<span class="fc" id="L28">    public ArrayList&lt;IndividualCustomer&gt; indcustomerList = new ArrayList&lt;IndividualCustomer&gt;();</span>
+
+    
+    
+<span class="fc" id="L32">    Sav_Account sav_acct = new Sav_Account(0,0,0,0,&quot;&quot;,0);</span>
+<span class="fc" id="L33">    Chk_Account chk_acct = new Chk_Account(0,0,0,0,0,&quot;&quot;,0);</span>
+<span class="fc" id="L34">    FD_Account fd_acct = new FD_Account(0,0,0,0,0,&quot;&quot;,0);</span>
+    
+    public void addBankCustomer(){
+<span class="nc" id="L37">        Scanner sc1 = new Scanner(System.in);</span>
+<span class="nc" id="L38">        System.out.println(&quot;Enter Customer name :&quot;);</span>
+<span class="nc" id="L39">        this.fullname = sc1.nextLine();</span>
+<span class="nc" id="L40">        System.out.println(&quot;Enter Customer ID :&quot;);</span>
+<span class="nc" id="L41">        this.cust_id = sc1.nextInt();</span>
+<span class="nc" id="L42">        sc1.nextLine();</span>
+<span class="nc" id="L43">        System.out.println(&quot;Enter Customer phone number :&quot;);</span>
+<span class="nc" id="L44">        this.phone = sc1.nextInt();</span>
+<span class="nc" id="L45">        System.out.println(&quot;Enter Customer Address :&quot;);</span>
+<span class="nc" id="L46">        this.address = sc1.nextLine();</span>
+<span class="nc" id="L47">        System.out.println(&quot;Enter Customer email : &quot;);</span>
+<span class="nc" id="L48">        this.email = sc1.nextLine();</span>
+        
+        String answer;
+<span class="nc" id="L51">        System.out.println(&quot;Does this customer want a CHEKING ACCOUNT ? (y/Y) or (n/N)&quot;);</span>
+<span class="nc" id="L52">        answer = sc1.nextLine();</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">        if(answer.equalsIgnoreCase(&quot;y&quot;)){</span>
+<span class="nc" id="L54">            chk_acct.addBankAccount(this.cust_id);</span>
+        }
+        String answer1;
+<span class="nc" id="L57">        System.out.println(&quot;Does this customer want a SAVING ACCOUNT ? (y/Y) or (n/N)&quot;);</span>
+<span class="nc" id="L58">        answer1 = sc1.nextLine();</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (answer1.equalsIgnoreCase(&quot;y&quot;)){</span>
+<span class="nc" id="L60">            sav_acct.addBankAccount(this.cust_id);</span>
+        }
+        String answer2;
+<span class="nc" id="L63">        System.out.println(&quot;Does this customer want a FD ACCOUNT ? (y/Y) or (n/N)&quot;);</span>
+<span class="nc" id="L64">        answer2 = sc1.nextLine();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        if (answer2.equalsIgnoreCase(&quot;y&quot;)){</span>
+<span class="nc" id="L66">            fd_acct.addBankAccount(this.cust_id);</span>
+    }
+<span class="nc" id="L68">}</span>
+
+    public int getCust_id() {
+<span class="fc" id="L71">        return cust_id;</span>
+    }
+
+    public void setCust_id(int cust_id) {
+<span class="nc" id="L75">        this.cust_id = cust_id;</span>
+<span class="nc" id="L76">    }</span>
+
+    public String getFullname() {
+<span class="fc" id="L79">        return fullname;</span>
+    }
+
+    public void setFullname(String fullname) {
+<span class="nc" id="L83">        this.fullname = fullname;</span>
+<span class="nc" id="L84">    }</span>
+
+    public int getPhone() {
+<span class="fc" id="L87">        return phone;</span>
+    }
+
+    public void setPhone(int phone) {
+<span class="nc" id="L91">        this.phone = phone;</span>
+<span class="nc" id="L92">    }</span>
+
+    public String getEmail() {
+<span class="fc" id="L95">        return email;</span>
+    }
+
+    public void setEmail(String email) {
+<span class="nc" id="L99">        this.email = email;</span>
+<span class="nc" id="L100">    }</span>
+
+    public String getAddress() {
+<span class="fc" id="L103">        return address;</span>
+    }
+
+    public void setAddress(String address) {
+<span class="nc" id="L107">        this.address = address;</span>
+<span class="nc" id="L108">    }</span>
+    
+    public String getType() {
+<span class="nc" id="L111">        return type;</span>
+    }
+
+    public void setType(String type) {
+<span class="nc" id="L115">        this.type = type;</span>
+<span class="nc" id="L116">    }</span>
+    
+    public ArrayList&lt;Chk_Account&gt; getChk_acct_List() {
+<span class="nc" id="L119">        return chk_acct_List;</span>
+    }
+
+    public void setChk_acct_List(ArrayList&lt;Chk_Account&gt; chk_acct_List) {
+<span class="nc" id="L123">        this.chk_acct_List = chk_acct_List;</span>
+<span class="nc" id="L124">    }</span>
+
+    public ArrayList&lt;Sav_Account&gt; getSav_acct_List() {
+<span class="nc" id="L127">        return sav_acct_List;</span>
+    }
+
+    public void setSav_acct_List(ArrayList&lt;Sav_Account&gt; sav_acct_List) {
+<span class="nc" id="L131">        this.sav_acct_List = sav_acct_List;</span>
+<span class="nc" id="L132">    }</span>
+
+    public ArrayList&lt;FD_Account&gt; getFD_acct_List() {
+<span class="nc" id="L135">        return fd_acct_List;</span>
+    }
+
+    public void setFD_Acct_List(ArrayList&lt;FD_Account&gt; fd_acct_List) {
+<span class="nc" id="L139">        this.fd_acct_List = fd_acct_List;</span>
+<span class="nc" id="L140">    }</span>
+
+
+
+<span class="fc" id="L144">    public Customer( int cust_id, String fullname, int phone, String email, String address ) {</span>
+<span class="fc" id="L145">        this.cust_id = cust_id;</span>
+<span class="fc" id="L146">        this.fullname = fullname;</span>
+<span class="fc" id="L147">        this.phone = phone;</span>
+<span class="fc" id="L148">        this.email = email;</span>
+<span class="fc" id="L149">        this.address = address;</span>
+        
+       
+<span class="fc" id="L152">    }</span>
+
+<span class="fc" id="L154">   public Customer(){</span>
+       
+<span class="fc" id="L156">   }</span>
+    
+    public Sav_Account getSav_acct() {
+<span class="nc" id="L159">        return sav_acct;</span>
+    }
+
+    public void setSav_acct(Sav_Account sav_acct) {
+<span class="nc" id="L163">        this.sav_acct = sav_acct;</span>
+<span class="nc" id="L164">    }</span>
+
+    public Chk_Account getChk_acct() {
+<span class="nc" id="L167">        return chk_acct;</span>
+    }
+
+    public void setChk_acct(Chk_Account chk_acct) {
+<span class="nc" id="L171">        this.chk_acct = chk_acct;</span>
+<span class="nc" id="L172">    }</span>
+
+    public FD_Account getFd_acct() {
+<span class="nc" id="L175">        return fd_acct;</span>
+    }
+
+    public void setFd_acct(FD_Account fd_acct) {
+<span class="nc" id="L179">        this.fd_acct = fd_acct;</span>
+<span class="nc" id="L180">    }</span>
+    
+ 
+
+    @Override
+    public String toString() {
+<span class="nc" id="L186">        return &quot;Customer{&quot; + &quot;cust_id=&quot; + cust_id + &quot;, fullname=&quot; + fullname + &quot;, phone=&quot; + phone + &quot;, email=&quot; + email + &quot;, address=&quot; + address + &quot;, type=&quot; + type + &quot;, chk_acct_List=&quot; + chk_acct_List + &quot;, sav_acct_List=&quot; + sav_acct_List + &quot;, fd_acct_List=&quot; + fd_acct_List + &quot;, sav_acct=&quot; + sav_acct + &quot;, chk_acct=&quot; + chk_acct + &quot;, fd_acct=&quot; + fd_acct + '}';</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

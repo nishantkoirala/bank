@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FD_Account.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBankManagementSystem</a> &gt; <a href="index.source.html" class="el_package">com.itexps.shoppingcart.mybankmanagementsystem</a> &gt; <span class="el_source">FD_Account.java</span></div><h1>FD_Account.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.itexps.shoppingcart.mybankmanagementsystem;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author nishant.koirala
+ */
+public class FD_Account extends Account {
+    private int terms_of_FD;
+    private double principal_amt;
+    private float int_rate;
+
+    public void addBankAccount(int cust_id) {
+<span class="nc" id="L19">        super.addBankAccount(cust_id);</span>
+<span class="nc" id="L20">        super.setAcct_type(&quot;FD&quot;);</span>
+<span class="nc" id="L21">        Scanner sc1 = new Scanner(System.in);</span>
+<span class="nc" id="L22">        System.out.println(&quot;Enter the principle amount :&quot;);</span>
+<span class="nc" id="L23">        this.principal_amt = sc1.nextDouble();</span>
+<span class="nc" id="L24">        System.out.println(&quot;Enter the interest rate :&quot;);</span>
+<span class="nc" id="L25">        this.int_rate = sc1.nextFloat();</span>
+<span class="nc" id="L26">        System.out.println(&quot;Enter the terms of FD :&quot;);</span>
+<span class="nc" id="L27">        this.terms_of_FD = sc1.nextInt();</span>
+<span class="nc" id="L28">    }</span>
+
+
+
+    public int getTerms_of_FD() {
+<span class="fc" id="L33">        return terms_of_FD;</span>
+    }
+
+    public void setTerms_of_FD(int terms_of_FD) {
+<span class="nc" id="L37">        this.terms_of_FD = terms_of_FD;</span>
+<span class="nc" id="L38">    }</span>
+
+    public double getPrincipal_amt() {
+<span class="fc" id="L41">        return principal_amt;</span>
+    }
+
+    public void setPrincipal_amt(double principal_amt) {
+<span class="nc" id="L45">        this.principal_amt = principal_amt;</span>
+<span class="nc" id="L46">    }</span>
+
+    public float getInt_rate() {
+<span class="fc" id="L49">        return int_rate;</span>
+    }
+
+    public void setInt_rate(float int_rate) {
+<span class="nc" id="L53">        this.int_rate = int_rate;</span>
+<span class="nc" id="L54">    }</span>
+
+    public FD_Account(int terms_of_FD, double principal_amt, float int_rate, int acct_id, double balance, String acct_type, int acct_no) {
+<span class="fc" id="L57">        super(acct_id, balance, acct_type, acct_no);</span>
+<span class="fc" id="L58">        this.terms_of_FD = terms_of_FD;</span>
+<span class="fc" id="L59">        this.principal_amt = principal_amt;</span>
+<span class="fc" id="L60">        this.int_rate = int_rate;</span>
+<span class="fc" id="L61">    }</span>
+    
+<span class="fc" id="L63">    public FD_Account(){</span>
+        
+<span class="fc" id="L65">    }</span>
+
+   
+    
+    
+
+
+    @Override
+    public String toString() {
+<span class="nc" id="L74">        return &quot;FD_Account --&gt;  Account No. :  &quot;+ this.getAcct_no() + &quot;| Acct ID : &quot; + this.getAcct_id() + &quot;| Principal_Amount : &quot; + principal_amt  + &quot;| Interest_Rate : &quot; + int_rate + &quot;| Term_of_FD :&quot; + terms_of_FD +&quot;\n&quot;;</span>
+    }
+
+   
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

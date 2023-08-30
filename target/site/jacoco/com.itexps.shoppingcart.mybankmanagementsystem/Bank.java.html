@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Bank.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBankManagementSystem</a> &gt; <a href="index.source.html" class="el_package">com.itexps.shoppingcart.mybankmanagementsystem</a> &gt; <span class="el_source">Bank.java</span></div><h1>Bank.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.itexps.shoppingcart.mybankmanagementsystem;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author nishant.koirala
+ */
+public class Bank {
+
+    private String bankname;
+    private String address;
+    private String phone;
+    private String bankemail;
+
+<span class="fc" id="L21">    public ArrayList&lt;FullTimeEmployee&gt; fteList = new ArrayList&lt;FullTimeEmployee&gt;();</span>
+<span class="fc" id="L22">    public ArrayList&lt;PartTimeEmployee&gt; pteList = new ArrayList&lt;PartTimeEmployee&gt;();</span>
+<span class="fc" id="L23">    public ArrayList&lt;BusinessCustomer&gt; buscustomerList = new ArrayList&lt;BusinessCustomer&gt;();</span>
+<span class="fc" id="L24">    public ArrayList&lt;IndividualCustomer&gt; indcustomerList = new ArrayList&lt;IndividualCustomer&gt;();</span>
+<span class="fc" id="L25">    public ArrayList&lt;Chk_Account&gt; chk_acct_List = new ArrayList&lt;Chk_Account&gt;();</span>
+<span class="fc" id="L26">    public ArrayList&lt;Sav_Account&gt; sav_acct_List = new ArrayList&lt;Sav_Account&gt;();</span>
+<span class="fc" id="L27">    public ArrayList&lt;FD_Account&gt; fd_acct_List = new ArrayList&lt;FD_Account&gt;();</span>
+
+<span class="fc" id="L29">    public Bank() {</span>
+
+<span class="fc" id="L31">    }</span>
+
+    public void addBankDetails() {
+
+<span class="nc" id="L35">        Scanner sc1 = new Scanner(System.in);</span>
+
+<span class="nc" id="L37">        System.out.println(&quot;Add a new Bank&quot;);</span>
+
+<span class="nc" id="L39">        System.out.println(&quot;Enter Bank Name : &quot;);</span>
+<span class="nc" id="L40">        this.bankname = sc1.next();</span>
+<span class="nc" id="L41">        System.out.println(&quot;Enter Bank Address : &quot;);</span>
+<span class="nc" id="L42">        this.address = sc1.next();</span>
+<span class="nc" id="L43">        System.out.println(&quot;Enter Bank Phone : &quot;);</span>
+<span class="nc" id="L44">        this.phone = sc1.next();</span>
+<span class="nc" id="L45">        System.out.println(&quot;Enter Bank Email : &quot;);</span>
+<span class="nc" id="L46">        this.bankemail = sc1.next();</span>
+<span class="nc" id="L47">    }</span>
+
+    public void editBankDetails() {
+
+<span class="nc" id="L51">        int ch = 0;</span>
+<span class="nc" id="L52">        Scanner sc2 = new Scanner(System.in);</span>
+
+<span class="nc bnc" id="L54" title="All 4 branches missed.">        while (ch &gt;= 0 &amp;&amp; ch &lt; 5) {</span>
+
+<span class="nc" id="L56">            System.out.println(&quot;*  Choose from the below menu  *&quot;);</span>
+<span class="nc" id="L57">            System.out.println(&quot;-------------------------------------&quot;);</span>
+<span class="nc" id="L58">            System.out.println();</span>
+<span class="nc" id="L59">            System.out.println(&quot;1. Change Bank name &quot;);</span>
+<span class="nc" id="L60">            System.out.println(&quot;2. Change Bank Address&quot;);</span>
+<span class="nc" id="L61">            System.out.println(&quot;3. Change Bank Phone&quot;);</span>
+<span class="nc" id="L62">            System.out.println(&quot;4. Change Bank Email&quot;);</span>
+<span class="nc" id="L63">            System.out.println(&quot;5. Exit Menu&quot;);</span>
+
+<span class="nc" id="L65">            Scanner sc3 = new Scanner(System.in);</span>
+<span class="nc" id="L66">            ch = sc2.nextInt();</span>
+
+<span class="nc bnc" id="L68" title="All 5 branches missed.">            switch (ch) {</span>
+
+                case 1:
+
+<span class="nc" id="L72">                    System.out.println(&quot;Enter New Bank Name&quot;);</span>
+<span class="nc" id="L73">                    this.bankname = sc3.nextLine();</span>
+<span class="nc" id="L74">                    break;</span>
+                case 2:
+
+<span class="nc" id="L77">                    System.out.println(&quot;Enter New Bank Address&quot;);</span>
+<span class="nc" id="L78">                    this.address = sc3.nextLine();</span>
+<span class="nc" id="L79">                    break;</span>
+                case 3:
+<span class="nc" id="L81">                    System.out.println(&quot;Enter New Bank Phone&quot;);</span>
+<span class="nc" id="L82">                    this.phone = sc3.nextLine();</span>
+<span class="nc" id="L83">                    break;</span>
+                case 4:
+<span class="nc" id="L85">                    System.out.println(&quot;Enter New Bank Email&quot;);</span>
+<span class="nc" id="L86">                    this.bankemail = sc3.nextLine();</span>
+<span class="nc" id="L87">                    break;</span>
+                case 5:
+                    break;
+
+            }
+<span class="nc" id="L92">        }</span>
+<span class="nc" id="L93">    }</span>
+
+    public String getBankname() {
+<span class="fc" id="L96">        return bankname;</span>
+    }
+
+    public void setBankname(String bankname) {
+<span class="nc" id="L100">        this.bankname = bankname;</span>
+<span class="nc" id="L101">    }</span>
+
+    public String getAddress() {
+<span class="fc" id="L104">        return address;</span>
+    }
+
+    public void setAddress(String address) {
+<span class="nc" id="L108">        this.address = address;</span>
+<span class="nc" id="L109">    }</span>
+
+    public String getPhone() {
+<span class="fc" id="L112">        return phone;</span>
+    }
+
+    public void setPhone(String phone) {
+<span class="nc" id="L116">        this.phone = phone;</span>
+<span class="nc" id="L117">    }</span>
+
+    public String getBankemail() {
+<span class="fc" id="L120">        return bankemail;</span>
+    }
+
+    public void setBankemail(String bankemail) {
+<span class="nc" id="L124">        this.bankemail = bankemail;</span>
+<span class="nc" id="L125">    }</span>
+
+    public ArrayList&lt;FullTimeEmployee&gt; getFteList() {
+<span class="fc" id="L128">        return fteList;</span>
+    }
+
+    public void setFteList(ArrayList&lt;FullTimeEmployee&gt; fteList) {
+<span class="nc" id="L132">        this.fteList = fteList;</span>
+<span class="nc" id="L133">    }</span>
+
+    public ArrayList&lt;PartTimeEmployee&gt; getPteList() {
+<span class="fc" id="L136">        return pteList;</span>
+    }
+
+    public void setPteList(ArrayList&lt;PartTimeEmployee&gt; pteList) {
+<span class="nc" id="L140">        this.pteList = pteList;</span>
+<span class="nc" id="L141">    }</span>
+
+    public ArrayList&lt;BusinessCustomer&gt; getBuscustomerList() {
+<span class="fc" id="L144">        return buscustomerList;</span>
+    }
+
+    public void setBuscustomerList(ArrayList&lt;BusinessCustomer&gt; buscustomerList) {
+<span class="nc" id="L148">        this.buscustomerList = buscustomerList;</span>
+<span class="nc" id="L149">    }</span>
+
+    public ArrayList&lt;IndividualCustomer&gt; getIndcustomerList() {
+<span class="fc" id="L152">        return indcustomerList;</span>
+    }
+
+    public void setIndcustomerList(ArrayList&lt;IndividualCustomer&gt; indcustomerList) {
+<span class="nc" id="L156">        this.indcustomerList = indcustomerList;</span>
+<span class="nc" id="L157">    }</span>
+
+    public ArrayList&lt;Chk_Account&gt; getChk_acct_List() {
+<span class="fc" id="L160">        return chk_acct_List;</span>
+    }
+
+    public void setChk_acct_List(ArrayList&lt;Chk_Account&gt; chk_acct_List) {
+<span class="nc" id="L164">        this.chk_acct_List = chk_acct_List;</span>
+<span class="nc" id="L165">    }</span>
+
+    public ArrayList&lt;Sav_Account&gt; getSav_acct_List() {
+<span class="fc" id="L168">        return sav_acct_List;</span>
+    }
+
+    public void setSav_acct_List(ArrayList&lt;Sav_Account&gt; sav_acct_List) {
+<span class="nc" id="L172">        this.sav_acct_List = sav_acct_List;</span>
+<span class="nc" id="L173">    }</span>
+
+    public ArrayList&lt;FD_Account&gt; getFd_acct_List() {
+<span class="fc" id="L176">        return fd_acct_List;</span>
+    }
+
+    public void setFd_acct_List(ArrayList&lt;FD_Account&gt; fd_acct_List) {
+<span class="nc" id="L180">        this.fd_acct_List = fd_acct_List;</span>
+<span class="nc" id="L181">    }</span>
+
+    public Bank(String bankname, String address, String phone, String bankemail,
+            ArrayList&lt;FullTimeEmployee&gt; fteList,
+            ArrayList&lt;PartTimeEmployee&gt; pteList,
+            ArrayList&lt;BusinessCustomer&gt; buscustomerList,
+            ArrayList&lt;IndividualCustomer&gt; indcustomerList,
+            ArrayList&lt;Chk_Account&gt; chk_acct_List,
+            ArrayList&lt;Sav_Account&gt; sav_acct_List,
+<span class="fc" id="L190">            ArrayList&lt;FD_Account&gt; fd_acct_List) {</span>
+<span class="fc" id="L191">        this.bankname = bankname;</span>
+<span class="fc" id="L192">        this.address = address;</span>
+<span class="fc" id="L193">        this.phone = phone;</span>
+<span class="fc" id="L194">        this.bankemail = bankemail;</span>
+<span class="fc" id="L195">        this.fteList = fteList;</span>
+<span class="fc" id="L196">        this.pteList = pteList;</span>
+<span class="fc" id="L197">        this.buscustomerList = buscustomerList;</span>
+<span class="fc" id="L198">        this.indcustomerList = indcustomerList;</span>
+<span class="fc" id="L199">        this.chk_acct_List = chk_acct_List;</span>
+<span class="fc" id="L200">        this.sav_acct_List = sav_acct_List;</span>
+<span class="fc" id="L201">        this.fd_acct_List = fd_acct_List;</span>
+
+<span class="fc" id="L203">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L207">        return &quot;Bank{&quot; + &quot;bankname=&quot; + bankname + &quot;, address=&quot; + address + &quot;, phone=&quot; + phone + &quot;, bankemail=&quot; + bankemail + &quot;, fteList=&quot; + fteList + &quot;, pteList=&quot; + pteList + &quot;, buscustomerList=&quot; + buscustomerList + &quot;, indcustomerList=&quot; + indcustomerList + &quot;, chk_acct_List=&quot; + chk_acct_List + &quot;, sav_acct_List=&quot; + sav_acct_List + &quot;, fd_acct_List=&quot; + fd_acct_List + '}';</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

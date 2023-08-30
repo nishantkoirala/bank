@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-30T17:23:51Z" name="test.com.BankTest" finished-at="2023-08-30T17:23:51Z" duration-ms="74">
+    <groups>
+    </groups>
+    <test started-at="2023-08-30T17:23:51Z" name="Command line test" finished-at="2023-08-30T17:23:51Z" duration-ms="74">
+      <class name="test.com.BankTest">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="setUpClass" finished-at="2023-08-30T12:23:51Z" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="setUpMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method signature="testAccount()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="testAccount" finished-at="2023-08-30T12:23:51Z" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAccount -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="tearDownMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="setUpMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="setUpMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="tearDownMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method signature="testBank()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="testBank" finished-at="2023-08-30T12:23:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBank -->
+        <test-method signature="testCustomer()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="testCustomer" finished-at="2023-08-30T12:23:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCustomer -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="tearDownMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method signature="testEmployee()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="testEmployee" finished-at="2023-08-30T12:23:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmployee -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="tearDownMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="setUpMethod" finished-at="2023-08-30T12:23:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test.com.BankTest@58cbafc2]" started-at="2023-08-30T12:23:51Z" name="tearDownClass" finished-at="2023-08-30T12:23:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- test.com.BankTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- test.com.BankTest -->
+</testng-results>

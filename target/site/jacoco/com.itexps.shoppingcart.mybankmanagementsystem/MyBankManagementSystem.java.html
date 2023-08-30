@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyBankManagementSystem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBankManagementSystem</a> &gt; <a href="index.source.html" class="el_package">com.itexps.shoppingcart.mybankmanagementsystem</a> &gt; <span class="el_source">MyBankManagementSystem.java</span></div><h1>MyBankManagementSystem.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.itexps.shoppingcart.mybankmanagementsystem;
+
+import com.itexps.shoppingcart.mybankmanagementsystem.BusinessCustomer;
+import com.itexps.shoppingcart.mybankmanagementsystem.IndividualCustomer;
+import com.itexps.shoppingcart.mybankmanagementsystem.FullTimeEmployee;
+import com.itexps.shoppingcart.mybankmanagementsystem.PartTimeEmployee;
+import com.itexps.shoppingcart.mybankmanagementsystem.Chk_Account;
+import com.itexps.shoppingcart.mybankmanagementsystem.FD_Account;
+import com.itexps.shoppingcart.mybankmanagementsystem.Sav_Account;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ *
+ * @author nishant.koirala
+ */
+<span class="nc" id="L25">public class MyBankManagementSystem {</span>
+    public static void main(String[] args) {
+        
+    
+    
+<span class="nc" id="L30">    int choice = 0;</span>
+<span class="nc" id="L31">        Bank MyBankManagementSystem = new Bank();</span>
+        
+        
+        
+        
+<span class="nc bnc" id="L36" title="All 2 branches missed.">       while (choice != 15){</span>
+    
+<span class="nc" id="L38">            System.out.println();</span>
+<span class="nc" id="L39">            System.out.println(&quot;                                * WELCOME TO BANK MANAGEMENT SYSTEM *&quot;);</span>
+<span class="nc" id="L40">            System.out.println(&quot;                                --------------------------------------------&quot;);</span>
+<span class="nc" id="L41">            System.out.println();</span>
+<span class="nc" id="L42">            System.out.println(&quot;                                     * Choose from the following Menu * &quot;);</span>
+<span class="nc" id="L43">            System.out.println();</span>
+<span class="nc" id="L44">            System.out.println(&quot;       BANK                         EMPLOYEE                   CUSTOMER                         ACCOUNT&quot;);</span>
+<span class="nc" id="L45">            System.out.println(&quot;      ======                       ==========                  ========                         =======&quot;);</span>
+<span class="nc" id="L46">            System.out.println(&quot;1. ADD BANK DETAILS         4. ADD BANK EMPLOYEE        8. ADD BANK CUSTOMER            12. UPDATE ACCOUNT INFORMATION&quot;);</span>
+<span class="nc" id="L47">            System.out.println(&quot;2. EDIT BANK DETAILS        5. UPDATE BANK EMPLOYEE     9. UPDATE CUSTOMER DETAIL       13. SEARCH BY ACCOUNT ID&quot;);</span>
+<span class="nc" id="L48">            System.out.println(&quot;3. VIEW BANK DETAILS        6. SEARCH BY EMP ID         10. SEARCH BY CUST ID           14. VIEW ALL ACCOUNTS IN BANK&quot;);</span>
+<span class="nc" id="L49">            System.out.println(&quot;                            7. VIEW ALL EMPLOYEES       11. VIEW ALL CUSTOMERS          15. EXIT BANKING SYSTEM&quot;);</span>
+<span class="nc" id="L50">            System.out.println();</span>
+
+<span class="nc" id="L52">            Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L53">            choice = sc.nextInt();</span>
+            
+
+<span class="nc bnc" id="L56" title="All 16 branches missed.">            switch (choice) {</span>
+
+                case 1 :
+                    
+<span class="nc" id="L60">                    MyBankManagementSystem.addBankDetails();</span>
+<span class="nc" id="L61">                    break;</span>
+                    
+                case 2 :
+                    
+<span class="nc" id="L65">                    MyBankManagementSystem.editBankDetails();</span>
+<span class="nc" id="L66">                    break;</span>
+                    
+                case 3 : 
+<span class="nc" id="L69">                    System.out.println(&quot;* THE BANK DETAILS ARE AS FOLLOWS *&quot;);</span>
+<span class="nc" id="L70">                    System.out.println(&quot;Bank Name    :&quot; + MyBankManagementSystem.getBankname());</span>
+<span class="nc" id="L71">                    System.out.println(&quot;Bank Address :&quot; + MyBankManagementSystem.getAddress());</span>
+<span class="nc" id="L72">                    System.out.println(&quot;Bank Phone   :&quot; + MyBankManagementSystem.getPhone());</span>
+<span class="nc" id="L73">                    System.out.println(&quot;Bank Email   :&quot; + MyBankManagementSystem.getBankemail());</span>
+<span class="nc" id="L74">                    System.out.println(&quot;No. of Full Time Employees : &quot; + MyBankManagementSystem.getFteList().size());</span>
+<span class="nc" id="L75">                    System.out.println(&quot;No. of Part Time Employees : &quot; + MyBankManagementSystem.getPteList().size());</span>
+<span class="nc" id="L76">                    System.out.println(&quot;No. of Business Customers : &quot; + MyBankManagementSystem.getBuscustomerList().size());</span>
+<span class="nc" id="L77">                    System.out.println(&quot;No. of Individual Customers : &quot; + MyBankManagementSystem.getIndcustomerList().size());</span>
+<span class="nc" id="L78">                    break;</span>
+            
+                    
+                 case 4 :    
+<span class="nc" id="L82">                     FullTimeEmployee fte = new FullTimeEmployee();</span>
+<span class="nc" id="L83">                     PartTimeEmployee pte = new PartTimeEmployee();</span>
+                     
+                     int emptype;
+<span class="nc" id="L86">                     Scanner sc4 = new Scanner(System.in);</span>
+<span class="nc" id="L87">                     System.out.println(&quot;* Enter 1 for FULL TIME EMPLOYEE and 2 for PART TIME EMPLOYEE *&quot;);</span>
+<span class="nc" id="L88">                     emptype = sc4.nextInt();</span>
+                     
+<span class="nc bnc" id="L90" title="All 2 branches missed.">                     if (emptype == 1) {</span>
+<span class="nc" id="L91">                         fte.addBankEmployee();</span>
+<span class="nc" id="L92">                         MyBankManagementSystem.getFteList().add(fte);</span>
+                     } else {
+<span class="nc" id="L94">                         pte.addBankEmployee();</span>
+<span class="nc" id="L95">                         MyBankManagementSystem.getPteList().add(pte);</span>
+                         
+                     }
+<span class="nc" id="L98">                   break;</span>
+                    
+                 case 5 : 
+<span class="nc" id="L101">                     Scanner sc5 = new Scanner(System.in);</span>
+<span class="nc" id="L102">                     int search_ID, found = 0;</span>
+<span class="nc" id="L103">                     System.out.println(&quot;Enter the Employee ID for which you want to update data :&quot;);</span>
+<span class="nc" id="L104">                     search_ID = sc5.nextInt();</span>
+<span class="nc" id="L105">                     sc5.nextLine();</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">                     for (FullTimeEmployee newfte : MyBankManagementSystem.getFteList()) {</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">                         if (search_ID == newfte.getId()){</span>
+<span class="nc" id="L108">                             newfte = newfte.editBankEmployee(newfte);</span>
+<span class="nc" id="L109">                             found = 1;</span>
+                         }
+<span class="nc" id="L111">                     }</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">                     if (found == 0) {</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">                         for (PartTimeEmployee newpte : MyBankManagementSystem.getPteList()) {</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">                             if (search_ID == newpte.getId()){</span>
+<span class="nc" id="L115">                                 newpte = newpte.editBankEmployee(newpte);</span>
+<span class="nc" id="L116">                                 found = 1;</span>
+                             }
+<span class="nc" id="L118">                         }</span>
+                     }
+<span class="nc bnc" id="L120" title="All 2 branches missed.">                     if (found == 0){</span>
+<span class="nc" id="L121">                         System.out.println(&quot;No Employee Existed&quot;);</span>
+                     }
+                   break;
+                
+                    
+                 case 6 : 
+<span class="nc" id="L127">                     Scanner sc6 = new Scanner(System.in);</span>
+<span class="nc" id="L128">                     int search_ID1, found1 = 0;</span>
+<span class="nc" id="L129">                     System.out.println(&quot;Enter the Employee ID you wanna search :&quot;);</span>
+<span class="nc" id="L130">                     search_ID1 = sc6.nextInt();</span>
+<span class="nc" id="L131">                     sc6.nextLine();</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">                     for (FullTimeEmployee newfte : MyBankManagementSystem.getFteList()) {</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">                         if (search_ID1 == newfte.getId()){</span>
+<span class="nc" id="L134">                             System.out.println(&quot;Full Time Employee Found ! The details are as follow &quot;);</span>
+<span class="nc" id="L135">                             System.out.println(&quot;Name         :&quot; + newfte.getName());</span>
+<span class="nc" id="L136">                             System.out.println(&quot;ID           :&quot; + newfte.getId());</span>
+<span class="nc" id="L137">                             System.out.println(&quot;Health Insurance No. :&quot; + newfte.getHealth_insurance_no());</span>
+<span class="nc" id="L138">                             found1 = 1;</span>
+                             
+                         }
+                         
+<span class="nc" id="L142">                     }</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">                     if (found1 == 0){</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">                         for (PartTimeEmployee newpte : MyBankManagementSystem.getPteList()){</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">                             if (search_ID1 == newpte.getId()){</span>
+<span class="nc" id="L146">                                 System.out.println(&quot;Part Time Employee Found ! The details are as follow &quot;);</span>
+<span class="nc" id="L147">                                 System.out.println(&quot;Name       :&quot; + newpte.getName());</span>
+<span class="nc" id="L148">                                 System.out.println(&quot;ID         :&quot; + newpte.getId());</span>
+<span class="nc" id="L149">                                 found1 = 1;</span>
+                             }
+<span class="nc" id="L151">                         }</span>
+                     }
+<span class="nc bnc" id="L153" title="All 2 branches missed.">                     if( found1 == 0){</span>
+<span class="nc" id="L154">                         System.out.println(&quot;No Employee Existed ! Try Again &quot;);</span>
+                     }
+                   break;
+                     
+                     
+                    
+                    case 7 : 
+                        String currentLine;
+                        
+                        
+                        
+                        try {
+                            
+<span class="nc" id="L167">                            FileWriter fw = new FileWriter(&quot;c:\\MyBankManagementSystem\\EmployeeList.txt&quot;,true);</span>
+<span class="nc" id="L168">                            BufferedWriter bw = new BufferedWriter(fw);</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">                            for (FullTimeEmployee viewfte : MyBankManagementSystem.getFteList()) {</span>
+<span class="nc" id="L170">                                bw.write(viewfte.toString());</span>
+<span class="nc" id="L171">                            }</span>
+<span class="nc bnc" id="L172" title="All 2 branches missed.">                            for (PartTimeEmployee viewpte : MyBankManagementSystem.getPteList()) {</span>
+<span class="nc" id="L173">                                bw.write(viewpte.toString());</span>
+<span class="nc" id="L174">                            }</span>
+                            
+<span class="nc" id="L176">                            bw.close();</span>
+<span class="nc" id="L177">                            fw.close();</span>
+                            
+                            
+<span class="nc" id="L180">                            FileReader fr = new FileReader(&quot;c:\\MyBankManagementSystem\\EmployeeList.txt&quot;);</span>
+<span class="nc" id="L181">                            BufferedReader br = new BufferedReader(fr);</span>
+<span class="nc" id="L182">                            currentLine = br.readLine();</span>
+<span class="nc bnc" id="L183" title="All 2 branches missed.">                            while (currentLine != null) {</span>
+<span class="nc" id="L184">                                System.out.println(currentLine);</span>
+<span class="nc" id="L185">                                currentLine = br.readLine();</span>
+                            }
+                            
+<span class="nc" id="L188">                            bw.close();</span>
+<span class="nc" id="L189">                            fw.close();</span>
+                            
+<span class="nc" id="L191">                        } catch (IOException e) {</span>
+                            
+<span class="nc" id="L193">                            e.getMessage();</span>
+<span class="nc" id="L194">                        }</span>
+<span class="nc" id="L195">                      break;</span>
+
+                    
+                    case 8 : 
+<span class="nc" id="L199">                        BusinessCustomer bcust = new BusinessCustomer();</span>
+<span class="nc" id="L200">                        IndividualCustomer icust = new IndividualCustomer();</span>
+<span class="nc" id="L201">                        Chk_Account chk_acct = new Chk_Account(0,0,0,0,0,&quot;&quot;,0);</span>
+<span class="nc" id="L202">                        Sav_Account sav_acct = new Sav_Account(0,0,0,0,&quot;&quot;,0);</span>
+<span class="nc" id="L203">                        FD_Account fd_acct = new FD_Account(0,0,0,0,0,&quot;&quot;,0);</span>
+<span class="nc" id="L204">                        Scanner sc8 = new Scanner(System.in);</span>
+                        int custtype;
+<span class="nc" id="L206">                        System.out.println(&quot;Enter 1 for BUSINESS CUSTOMER and 2 for INDIVIDUAL CUSTOMER&quot;);</span>
+<span class="nc" id="L207">                        custtype = sc8.nextInt();</span>
+<span class="nc bnc" id="L208" title="All 2 branches missed.">                if (custtype == 1) {</span>
+<span class="nc" id="L209">                    bcust.addBankCustomer();</span>
+<span class="nc" id="L210">                    chk_acct = bcust.getChk_acct();</span>
+<span class="nc" id="L211">                    sav_acct = bcust.getSav_acct();</span>
+<span class="nc" id="L212">                    fd_acct = bcust.getFd_acct();</span>
+<span class="nc" id="L213">                    MyBankManagementSystem.getBuscustomerList().add(bcust);</span>
+<span class="nc bnc" id="L214" title="All 2 branches missed.">                    if(chk_acct.getAcct_id()!=0){</span>
+<span class="nc" id="L215">                        MyBankManagementSystem.getChk_acct_List().add(chk_acct);</span>
+                    }
+<span class="nc bnc" id="L217" title="All 2 branches missed.">                    if(sav_acct.getAcct_id()!=0){</span>
+<span class="nc" id="L218">                        MyBankManagementSystem.getSav_acct_List().add(sav_acct);</span>
+                    }
+<span class="nc bnc" id="L220" title="All 2 branches missed.">                    if(fd_acct.getAcct_id()!=0){</span>
+<span class="nc" id="L221">                        MyBankManagementSystem.getFd_acct_List().add(fd_acct);</span>
+                    }
+                } else {
+<span class="nc" id="L224">                    icust.addBankCustomer();</span>
+<span class="nc" id="L225">                    chk_acct = icust.getChk_acct();</span>
+<span class="nc" id="L226">                    sav_acct = icust.getSav_acct();</span>
+<span class="nc" id="L227">                    fd_acct = icust.getFd_acct();</span>
+<span class="nc" id="L228">                    MyBankManagementSystem.getIndcustomerList().add(icust);</span>
+<span class="nc bnc" id="L229" title="All 2 branches missed.">                    if(chk_acct.getAcct_id()!=0){</span>
+<span class="nc" id="L230">                        MyBankManagementSystem.getChk_acct_List().add(chk_acct);</span>
+                    }
+<span class="nc bnc" id="L232" title="All 2 branches missed.">                    if(sav_acct.getAcct_id()!=0){</span>
+<span class="nc" id="L233">                        MyBankManagementSystem.getSav_acct_List().add(sav_acct);</span>
+                    }
+<span class="nc bnc" id="L235" title="All 2 branches missed.">                    if(fd_acct.getAcct_id()!=0){</span>
+<span class="nc" id="L236">                        MyBankManagementSystem.getFd_acct_List().add(fd_acct);</span>
+                    }
+                }
+                  break;
+                    
+               
+                
+                    
+
+                     
+                   
+                    case 9 : 
+<span class="nc" id="L248">                    Scanner sc9 = new Scanner(System.in);</span>
+                    int cust_search_ID,
+<span class="nc" id="L250">                    datafound = 0,</span>
+<span class="nc" id="L251">                    cust_found = 0,</span>
+                    caccttrigger,
+                    saccttrigger,
+                    fdaccttrigger;
+                    
+                    Chk_Account chk_acct1;
+                    Sav_Account sav_acct1;
+                    FD_Account fd_acct1;
+<span class="nc" id="L259">                        System.out.println(&quot;Enter the Customer ID for which you want to update data :&quot;);</span>
+<span class="nc" id="L260">                        cust_search_ID = sc9.nextInt();</span>
+<span class="nc" id="L261">                        sc9.nextLine();</span>
+<span class="nc bnc" id="L262" title="All 2 branches missed.">                        for (BusinessCustomer buss_cust : MyBankManagementSystem.getBuscustomerList()){</span>
+<span class="nc bnc" id="L263" title="All 2 branches missed.">                            if (cust_search_ID == buss_cust.getCust_id()){</span>
+<span class="nc" id="L264">                                caccttrigger = (int) buss_cust.getChk_acct().getPrincipal_amt();</span>
+<span class="nc" id="L265">                                caccttrigger = (int) buss_cust.getChk_acct().getOvd_limit();</span>
+<span class="nc" id="L266">                                caccttrigger = (int) buss_cust.getChk_acct().getInt_rate();</span>
+<span class="nc" id="L267">                                saccttrigger = (int) buss_cust.getSav_acct().getPrincipal_amt();</span>
+<span class="nc" id="L268">                                saccttrigger = (int) buss_cust.getSav_acct().getInt_rate();</span>
+<span class="nc" id="L269">                                fdaccttrigger = (int) buss_cust.getFd_acct().getPrincipal_amt();</span>
+<span class="nc" id="L270">                                fdaccttrigger = buss_cust.getFd_acct().getTerms_of_FD();</span>
+<span class="nc" id="L271">                                fdaccttrigger = (int) buss_cust.getFd_acct().getInt_rate();</span>
+                                
+<span class="nc" id="L273">                                buss_cust = buss_cust.editBankCustomer(buss_cust);</span>
+<span class="nc" id="L274">                                cust_found = 1;</span>
+                                
+<span class="nc" id="L276">                                chk_acct1 = buss_cust.getChk_acct();</span>
+<span class="nc" id="L277">                                System.out.println(chk_acct1.toString());</span>
+<span class="nc" id="L278">                                sav_acct1 = buss_cust.getSav_acct();</span>
+<span class="nc" id="L279">                                System.out.println(sav_acct1.toString());</span>
+<span class="nc" id="L280">                                fd_acct1 = buss_cust.getFd_acct();</span>
+<span class="nc" id="L281">                                System.out.println(fd_acct1.toString());</span>
+                                
+<span class="nc bnc" id="L283" title="All 4 branches missed.">                                if (caccttrigger == 0 &amp;&amp; chk_acct1.getPrincipal_amt()!=0) {</span>
+<span class="nc" id="L284">                                    MyBankManagementSystem.getChk_acct_List().add(chk_acct1);</span>
+                                    
+                                }
+<span class="nc bnc" id="L287" title="All 4 branches missed.">                                if (caccttrigger == 0 &amp;&amp; chk_acct1.getOvd_limit()!=0) {</span>
+<span class="nc" id="L288">                                    MyBankManagementSystem.getChk_acct_List().add(chk_acct1);</span>
+                                }
+<span class="nc bnc" id="L290" title="All 4 branches missed.">                                if (caccttrigger == 0 &amp;&amp; chk_acct1.getInt_rate()!=0) {</span>
+<span class="nc" id="L291">                                    MyBankManagementSystem.getChk_acct_List().add(chk_acct1);</span>
+                                }
+<span class="nc bnc" id="L293" title="All 4 branches missed.">                                if (saccttrigger == 0 &amp;&amp; sav_acct1.getInt_rate()!=0) {</span>
+<span class="nc" id="L294">                                    MyBankManagementSystem.getSav_acct_List().add(sav_acct1);</span>
+                                }
+<span class="nc bnc" id="L296" title="All 4 branches missed.">                                if (saccttrigger == 0 &amp;&amp; sav_acct1.getPrincipal_amt()!=0) {</span>
+<span class="nc" id="L297">                                    MyBankManagementSystem.getSav_acct_List().add(sav_acct1);</span>
+                                }
+<span class="nc bnc" id="L299" title="All 4 branches missed.">                                if (fdaccttrigger == 0 &amp;&amp; fd_acct1.getPrincipal_amt()!=0) {</span>
+<span class="nc" id="L300">                                    MyBankManagementSystem.getFd_acct_List().add(fd_acct1);</span>
+                                }
+<span class="nc bnc" id="L302" title="All 4 branches missed.">                                if (fdaccttrigger == 0 &amp;&amp; fd_acct1.getInt_rate()!=0) {</span>
+<span class="nc" id="L303">                                    MyBankManagementSystem.getFd_acct_List().add(fd_acct1);</span>
+                                }
+<span class="nc bnc" id="L305" title="All 4 branches missed.">                                if (fdaccttrigger == 0 &amp;&amp; fd_acct1.getTerms_of_FD()!=0){</span>
+<span class="nc" id="L306">                                    MyBankManagementSystem.getFd_acct_List().add(fd_acct1);</span>
+                                }
+                                
+                              }
+<span class="nc" id="L310">                             }</span>
+<span class="nc bnc" id="L311" title="All 2 branches missed.">                        if (cust_found == 0) {</span>
+<span class="nc bnc" id="L312" title="All 2 branches missed.">                            for (IndividualCustomer indi_cust : MyBankManagementSystem.getIndcustomerList()) {</span>
+<span class="nc bnc" id="L313" title="All 2 branches missed.">                                if (cust_search_ID == indi_cust.getCust_id()) {</span>
+<span class="nc" id="L314">                                    caccttrigger = (int) indi_cust.getChk_acct().getPrincipal_amt();</span>
+<span class="nc" id="L315">                                    caccttrigger = (int) indi_cust.getChk_acct().getOvd_limit();</span>
+<span class="nc" id="L316">                                    caccttrigger = (int) indi_cust.getChk_acct().getInt_rate();</span>
+<span class="nc" id="L317">                                    saccttrigger = (int) indi_cust.getSav_acct().getPrincipal_amt();</span>
+<span class="nc" id="L318">                                    saccttrigger =  (int) indi_cust.getSav_acct().getInt_rate();</span>
+<span class="nc" id="L319">                                    fdaccttrigger = (int) indi_cust.getFd_acct().getPrincipal_amt();</span>
+<span class="nc" id="L320">                                    fdaccttrigger = (int) indi_cust.getFd_acct().getInt_rate();</span>
+<span class="nc" id="L321">                                    fdaccttrigger = indi_cust.getFd_acct().getTerms_of_FD();</span>
+                                   
+<span class="nc" id="L323">                                    indi_cust = indi_cust.editBankCustomer(indi_cust);</span>
+<span class="nc" id="L324">                                    cust_found = 1;</span>
+                                    
+<span class="nc" id="L326">                                    chk_acct1 = indi_cust.getChk_acct();</span>
+<span class="nc" id="L327">                                    System.out.println(chk_acct1.toString());</span>
+<span class="nc" id="L328">                                    sav_acct1 = indi_cust.getSav_acct();</span>
+<span class="nc" id="L329">                                    System.out.println(sav_acct1.toString());</span>
+<span class="nc" id="L330">                                    fd_acct1 = indi_cust.getFd_acct();</span>
+<span class="nc" id="L331">                                    System.out.println(fd_acct1.toString());</span>
+                                    
+<span class="nc bnc" id="L333" title="All 4 branches missed.">                                    if (caccttrigger == 0 &amp;&amp; chk_acct1.getPrincipal_amt()!=0) {</span>
+<span class="nc" id="L334">                                        MyBankManagementSystem.getChk_acct_List().add(chk_acct1);</span>
+                                    }
+<span class="nc bnc" id="L336" title="All 4 branches missed.">                                    if (caccttrigger == 0 &amp;&amp; chk_acct1.getOvd_limit()!=0 ) {</span>
+<span class="nc" id="L337">                                    MyBankManagementSystem.getChk_acct_List().add(chk_acct1);</span>
+                                }
+<span class="nc bnc" id="L339" title="All 4 branches missed.">                                    if (caccttrigger == 0 &amp;&amp; chk_acct1.getInt_rate()!=0 ) {</span>
+<span class="nc" id="L340">                                    MyBankManagementSystem.getChk_acct_List().add(chk_acct1);</span>
+                                }
+<span class="nc bnc" id="L342" title="All 4 branches missed.">                                    if (saccttrigger == 0 &amp;&amp; sav_acct1.getInt_rate()!=0) {</span>
+<span class="nc" id="L343">                                        MyBankManagementSystem.getSav_acct_List().add(sav_acct1);</span>
+                                    }
+<span class="nc bnc" id="L345" title="All 4 branches missed.">                                    if (saccttrigger == 0 &amp;&amp; sav_acct1.getPrincipal_amt()!=0){</span>
+<span class="nc" id="L346">                                        MyBankManagementSystem.getSav_acct_List().add(sav_acct1);</span>
+                                    }
+<span class="nc bnc" id="L348" title="All 4 branches missed.">                                    if (fdaccttrigger == 0 &amp;&amp; fd_acct1.getPrincipal_amt()!=0) {</span>
+<span class="nc" id="L349">                                        MyBankManagementSystem.getFd_acct_List().add(fd_acct1);</span>
+                                    }
+<span class="nc bnc" id="L351" title="All 4 branches missed.">                                    if (fdaccttrigger == 0 &amp;&amp; fd_acct1.getInt_rate()!=0) {</span>
+<span class="nc" id="L352">                                        MyBankManagementSystem.getFd_acct_List().add(fd_acct1);</span>
+                                    }
+<span class="nc bnc" id="L354" title="All 4 branches missed.">                                    if(fdaccttrigger == 0 &amp;&amp; fd_acct1.getTerms_of_FD()!=0){</span>
+<span class="nc" id="L355">                                        MyBankManagementSystem.getFd_acct_List().add(fd_acct1);</span>
+                                    }
+                            }
+<span class="nc" id="L358">                        }</span>
+                        
+                  }
+<span class="nc bnc" id="L361" title="All 2 branches missed.">                       if (cust_found == 0){</span>
+<span class="nc" id="L362">                           System.out.println(&quot;No Customer ID exists ! Try Again&quot;);</span>
+                       }
+                    break;
+                    
+                    case 10 :
+<span class="nc" id="L367">                        Scanner sc10 = new Scanner(System.in);</span>
+<span class="nc" id="L368">                        int search_ID2, found2 = 0;</span>
+<span class="nc" id="L369">                        System.out.println(&quot;Enter the customer ID you want to search&quot;);</span>
+<span class="nc" id="L370">                        search_ID2 = sc10.nextInt();</span>
+<span class="nc" id="L371">                        sc10.nextLine(); </span>
+<span class="nc bnc" id="L372" title="All 2 branches missed.">                        for (BusinessCustomer buss_cust : MyBankManagementSystem.getBuscustomerList()) {</span>
+<span class="nc bnc" id="L373" title="All 2 branches missed.">                            if(search_ID2 == buss_cust.getCust_id()){</span>
+<span class="nc" id="L374">                                System.out.println(&quot;Business Customer found. The details are as follow&quot;);</span>
+<span class="nc" id="L375">                                System.out.println(&quot;Name : &quot; + buss_cust.getFullname());</span>
+<span class="nc" id="L376">                                System.out.println(&quot;ID  :&quot; + buss_cust.getCust_id());</span>
+<span class="nc" id="L377">                                System.out.println(&quot;Phone  :&quot; + buss_cust.getPhone());</span>
+<span class="nc" id="L378">                                System.out.println(&quot;Address  :&quot; + buss_cust.getAddress());</span>
+<span class="nc" id="L379">                                System.out.println(&quot;Type of Business  :&quot; + buss_cust.getBuss_Type());</span>
+<span class="nc" id="L380">                                System.out.println(&quot; These are the associated accounts :&quot;);</span>
+<span class="nc bnc" id="L381" title="All 2 branches missed.">                                if (buss_cust.getChk_acct().getAcct_no() != 0 ){</span>
+<span class="nc" id="L382">                                    System.out.println(&quot;Checking Account : &quot; + buss_cust.getChk_acct().getAcct_no());</span>
+                                }
+<span class="nc bnc" id="L384" title="All 2 branches missed.">                                if (buss_cust.getSav_acct().getAcct_no() != 0) {</span>
+<span class="nc" id="L385">                                    System.out.println(&quot;Saving Account : &quot; + buss_cust.getSav_acct().getAcct_no());</span>
+                                }
+<span class="nc bnc" id="L387" title="All 2 branches missed.">                                if (buss_cust.getFd_acct().getAcct_no()!= 0) {</span>
+<span class="nc" id="L388">                                    System.out.println(&quot;FD Account : &quot; + buss_cust.getFd_acct().getAcct_no());</span>
+                                }
+<span class="nc" id="L390">                                found2 = 1;</span>
+                            }
+<span class="nc" id="L392">                        }</span>
+<span class="nc bnc" id="L393" title="All 2 branches missed.">                        if (found2 == 0) {</span>
+<span class="nc bnc" id="L394" title="All 2 branches missed.">                            for (IndividualCustomer indi_cust : MyBankManagementSystem.getIndcustomerList()) {</span>
+<span class="nc bnc" id="L395" title="All 2 branches missed.">                                if (search_ID2 == indi_cust.getCust_id()) {</span>
+<span class="nc" id="L396">                                    System.out.println(&quot;Individual Customer Found. The details are as follow&quot;);</span>
+<span class="nc" id="L397">                                    System.out.println(&quot;Name :&quot; + indi_cust.getFullname());</span>
+<span class="nc" id="L398">                                    System.out.println(&quot;ID :&quot; + indi_cust.getCust_id());</span>
+<span class="nc" id="L399">                                    System.out.println(&quot;Phone :&quot; + indi_cust.getPhone());</span>
+<span class="nc" id="L400">                                    System.out.println(&quot;Address :&quot; + indi_cust.getAddress());</span>
+<span class="nc" id="L401">                                    System.out.println(&quot;Salarised :&quot; + indi_cust.getSalarised());</span>
+<span class="nc" id="L402">                                    System.out.println(&quot;These are associated account :&quot;);</span>
+<span class="nc bnc" id="L403" title="All 2 branches missed.">                                    if (indi_cust.getChk_acct().getAcct_no()!= 0) {</span>
+<span class="nc" id="L404">                                        System.out.println(&quot;Checking Account : &quot; + indi_cust.getChk_acct().getAcct_no());</span>
+                                    }
+<span class="nc bnc" id="L406" title="All 2 branches missed.">                                    if (indi_cust.getSav_acct().getAcct_no()!= 0) {</span>
+<span class="nc" id="L407">                                        System.out.println(&quot;Saving Account : &quot; + indi_cust.getSav_acct().getAcct_no());</span>
+                                    }
+<span class="nc bnc" id="L409" title="All 2 branches missed.">                                    if (indi_cust.getFd_acct().getAcct_no()!= 0) {</span>
+<span class="nc" id="L410">                                        System.out.println(&quot;FD Account : &quot; + indi_cust.getFd_acct().getAcct_no());</span>
+                                    }
+<span class="nc" id="L412">                                    found2 = 1;</span>
+                                }
+<span class="nc" id="L414">                            }</span>
+                        }    
+<span class="nc bnc" id="L416" title="All 2 branches missed.">                        if (found2 == 0) {</span>
+<span class="nc" id="L417">                            System.out.println(&quot;No such customer ID exists ! Try Again&quot;);</span>
+                        }
+                        
+                        break;
+               
+                        case 11:
+
+                    String currentLine1;
+
+                   
+
+                    try {
+                        //System.out.println(&quot;inside try block - file writer&quot;);
+<span class="nc" id="L430">                        FileWriter fw = new FileWriter(&quot;c:\\MyBankManagementSystem\\CustomerList.txt&quot;,true);</span>
+<span class="nc" id="L431">                        BufferedWriter bw = new BufferedWriter(fw);</span>
+<span class="nc bnc" id="L432" title="All 2 branches missed.">                        for (BusinessCustomer buss_cust : MyBankManagementSystem.getBuscustomerList()) {</span>
+<span class="nc" id="L433">                            bw.write(buss_cust.toString());</span>
+<span class="nc" id="L434">                        }</span>
+<span class="nc bnc" id="L435" title="All 2 branches missed.">                        for (IndividualCustomer indi_cust : MyBankManagementSystem.getIndcustomerList()) {</span>
+<span class="nc" id="L436">                            bw.write(indi_cust.toString());</span>
+<span class="nc" id="L437">                        }</span>
+
+<span class="nc" id="L439">                        bw.close();</span>
+<span class="nc" id="L440">                        fw.close();</span>
+
+                        
+<span class="nc" id="L443">                        FileReader fr = new FileReader(&quot;c:\\MyBankManagementSystem\\CustomerList.txt&quot;);</span>
+<span class="nc" id="L444">                        BufferedReader br = new BufferedReader(fr);</span>
+<span class="nc" id="L445">                        currentLine1 = br.readLine();</span>
+<span class="nc bnc" id="L446" title="All 2 branches missed.">                        while (currentLine1 != null) {</span>
+<span class="nc" id="L447">                            System.out.println(currentLine1);</span>
+<span class="nc" id="L448">                            currentLine1 = br.readLine();</span>
+                        }
+
+<span class="nc" id="L451">                        bw.close();</span>
+<span class="nc" id="L452">                        fw.close();</span>
+
+<span class="nc" id="L454">                    } catch (Exception e) {</span>
+
+<span class="nc" id="L456">                        e.getMessage();</span>
+
+<span class="nc" id="L458">                    }</span>
+
+<span class="nc" id="L460">                    break;</span>
+                    
+                        case 12 :
+<span class="nc" id="L463">                            Scanner sc12 = new Scanner(System.in);</span>
+                            int search_ID12;
+<span class="nc" id="L465">                            int found12 = 0;</span>
+                            double value;
+                            float value1;
+                            int value2;
+<span class="nc" id="L469">                            System.out.println(&quot;Enter the account number for which you want to update data :&quot;);</span>
+<span class="nc" id="L470">                            search_ID12 = sc12.nextInt();</span>
+<span class="nc bnc" id="L471" title="All 2 branches missed.">                            for (Chk_Account chk_acct12 : MyBankManagementSystem.getChk_acct_List()) {</span>
+<span class="nc bnc" id="L472" title="All 2 branches missed.">                                if(chk_acct12.getAcct_no() == search_ID12){</span>
+<span class="nc" id="L473">                                    System.out.println(&quot;Enter new principle amount :&quot;);</span>
+<span class="nc" id="L474">                                    value = sc12.nextDouble();</span>
+<span class="nc" id="L475">                                    chk_acct12.setPrincipal_amt(value);</span>
+<span class="nc" id="L476">                                    System.out.println(&quot;Enter new over draft limit :&quot;);</span>
+<span class="nc" id="L477">                                    value = sc12.nextDouble();</span>
+<span class="nc" id="L478">                                    chk_acct12.setOvd_limit(value);</span>
+<span class="nc" id="L479">                                    System.out.println(&quot;Enter new interest rate :&quot;);</span>
+<span class="nc" id="L480">                                    value1 = sc12.nextFloat();</span>
+<span class="nc" id="L481">                                    chk_acct12.setInt_rate(value1);</span>
+<span class="nc" id="L482">                                    found12 = 1;</span>
+                                    
+                                }
+<span class="nc" id="L485">                            }</span>
+                            
+<span class="nc bnc" id="L487" title="All 2 branches missed.">                        for (Sav_Account sav_acct12 : MyBankManagementSystem.getSav_acct_List()) {</span>
+<span class="nc bnc" id="L488" title="All 2 branches missed.">                            if(sav_acct12.getAcct_no() == search_ID12){</span>
+<span class="nc" id="L489">                                System.out.println(&quot;Enter new principle amount :&quot;);</span>
+<span class="nc" id="L490">                                value = sc12.nextDouble();</span>
+<span class="nc" id="L491">                                sav_acct12.setPrincipal_amt(value);</span>
+<span class="nc" id="L492">                                System.out.println(&quot;Enter new interest rate&quot;);</span>
+<span class="nc" id="L493">                                value1 = sc12.nextFloat();</span>
+<span class="nc" id="L494">                                sav_acct12.setInt_rate(value1);</span>
+<span class="nc" id="L495">                                found12 = 1;</span>
+                            }
+<span class="nc" id="L497">                        }</span>
+
+<span class="nc bnc" id="L499" title="All 2 branches missed.">                       for (FD_Account fd_acct12 : MyBankManagementSystem.getFd_acct_List()) {</span>
+<span class="nc bnc" id="L500" title="All 2 branches missed.">                           if(fd_acct12.getAcct_no() == search_ID12){</span>
+<span class="nc" id="L501">                               System.out.println(&quot;Enter new principle amount :&quot;);</span>
+<span class="nc" id="L502">                               value = sc12.nextDouble();</span>
+<span class="nc" id="L503">                               fd_acct12.setPrincipal_amt(value);</span>
+<span class="nc" id="L504">                               System.out.println(&quot;Enter new interest rate :&quot;);</span>
+<span class="nc" id="L505">                               value1 = sc12.nextFloat();</span>
+<span class="nc" id="L506">                               fd_acct12.setInt_rate(value1);</span>
+<span class="nc" id="L507">                               System.out.println(&quot;Enter new term of FD :&quot;);</span>
+<span class="nc" id="L508">                               value2 = sc12.nextInt();</span>
+<span class="nc" id="L509">                               fd_acct12.setTerms_of_FD(value2);</span>
+<span class="nc" id="L510">                               found12 = 1;</span>
+                           }
+<span class="nc" id="L512">                       }</span>
+<span class="nc bnc" id="L513" title="All 2 branches missed.">                       if(found12 == 0) {</span>
+<span class="nc" id="L514">                           System.out.println(&quot;No such Account ID exists ! Enter Again&quot;);</span>
+                       }
+                       break;
+                       
+                        case 13 :
+<span class="nc" id="L519">                            Scanner sc13 = new Scanner(System.in);</span>
+                            int search_ID13;
+<span class="nc" id="L521">                            int found13 = 0;</span>
+<span class="nc" id="L522">                            System.out.println(&quot;Enter the Account No. you want to search :&quot;);</span>
+<span class="nc" id="L523">                            search_ID13 = sc13.nextInt();</span>
+<span class="nc bnc" id="L524" title="All 2 branches missed.">                            for (Chk_Account chk_acct12 : MyBankManagementSystem.getChk_acct_List()) {</span>
+<span class="nc bnc" id="L525" title="All 2 branches missed.">                                if(chk_acct12.getAcct_no() == search_ID13){</span>
+<span class="nc" id="L526">                                    System.out.println(&quot;Checking Account Details are as follow :&quot;);</span>
+<span class="nc" id="L527">                                    System.out.println(&quot;Assoiciated Customer ID : &quot; +chk_acct12.getAcct_id());</span>
+<span class="nc" id="L528">                                    System.out.println(&quot;Principle Amount : &quot; + chk_acct12.getPrincipal_amt());</span>
+<span class="nc" id="L529">                                    System.out.println(&quot;Over Draft Limit : &quot; + chk_acct12.getOvd_limit());</span>
+<span class="nc" id="L530">                                    System.out.println(&quot;Interest Rate : &quot; + chk_acct12.getInt_rate());</span>
+<span class="nc" id="L531">                                    found13 = 1;</span>
+                                }
+<span class="nc" id="L533">                            }</span>
+                            
+<span class="nc bnc" id="L535" title="All 2 branches missed.">                       for (Sav_Account sav_acct12 : MyBankManagementSystem.getSav_acct_List()) {</span>
+<span class="nc bnc" id="L536" title="All 2 branches missed.">                           if(sav_acct12.getAcct_no() == search_ID13){</span>
+<span class="nc" id="L537">                               System.out.println(&quot;Saving Account Details are as follow :&quot;);</span>
+<span class="nc" id="L538">                               System.out.println(&quot;Associated Customer ID : &quot; + sav_acct12.getAcct_id());</span>
+<span class="nc" id="L539">                               System.out.println(&quot;Principle Amount : &quot; + sav_acct12.getPrincipal_amt());</span>
+<span class="nc" id="L540">                               System.out.println(&quot;Interest Rate : &quot; + sav_acct12.getInt_rate());</span>
+<span class="nc" id="L541">                               found13 = 1;</span>
+                           }
+<span class="nc" id="L543">                       }</span>
+                   
+<span class="nc bnc" id="L545" title="All 2 branches missed.">                       for (FD_Account fd_acct12 : MyBankManagementSystem.getFd_acct_List()) {</span>
+<span class="nc bnc" id="L546" title="All 2 branches missed.">                           if(fd_acct12.getAcct_no() == search_ID13){</span>
+<span class="nc" id="L547">                               System.out.println(&quot;FIxed Deposit Account Details are as follow :&quot;);</span>
+<span class="nc" id="L548">                               System.out.println(&quot;Associated Customer ID : &quot; + fd_acct12.getAcct_id());</span>
+<span class="nc" id="L549">                               System.out.println(&quot;Principle Amount : &quot; + fd_acct12.getPrincipal_amt());</span>
+<span class="nc" id="L550">                               System.out.println(&quot;Interest Rate : &quot; + fd_acct12.getInt_rate());</span>
+<span class="nc" id="L551">                               System.out.println(&quot;Terms of FD : &quot; + fd_acct12.getTerms_of_FD());</span>
+<span class="nc" id="L552">                               found13 = 1;</span>
+                           }
+<span class="nc" id="L554">                       }</span>
+<span class="nc bnc" id="L555" title="All 2 branches missed.">                       if (found13 == 0) {</span>
+<span class="nc" id="L556">                           System.out.println(&quot;No such Account ID exists ! Enter Again&quot;);</span>
+                       }
+                       break;
+
+                        case 14 :
+                            
+                            String currentLine14;
+                            try{
+<span class="nc" id="L564">                                FileWriter fw = new FileWriter(&quot;c:\\MyBankManagementSystem\\AccountList.txt&quot;,true);</span>
+<span class="nc" id="L565">                                BufferedWriter bw = new BufferedWriter(fw);</span>
+<span class="nc bnc" id="L566" title="All 2 branches missed.">                                for (Chk_Account chk_acct14 : MyBankManagementSystem.getChk_acct_List()){</span>
+<span class="nc" id="L567">                                    bw.write(chk_acct14.toString());</span>
+<span class="nc" id="L568">                                }</span>
+<span class="nc bnc" id="L569" title="All 2 branches missed.">                                for (Sav_Account sav_acct14 : MyBankManagementSystem.getSav_acct_List()){</span>
+<span class="nc" id="L570">                                    bw.write(sav_acct14.toString());</span>
+<span class="nc" id="L571">                                }</span>
+<span class="nc bnc" id="L572" title="All 2 branches missed.">                                for (FD_Account fd_acct14 : MyBankManagementSystem.getFd_acct_List()){</span>
+<span class="nc" id="L573">                                    bw.write(fd_acct14.toString());</span>
+<span class="nc" id="L574">                                }</span>
+<span class="nc" id="L575">                                bw.close();</span>
+<span class="nc" id="L576">                                fw.close();</span>
+                                
+<span class="nc" id="L578">                                FileReader fr = new FileReader(&quot;c:\\MyBankManagementSystem\\AccountList.txt&quot;);</span>
+<span class="nc" id="L579">                                BufferedReader br = new BufferedReader(fr);</span>
+<span class="nc" id="L580">                                currentLine14 = br.readLine();</span>
+<span class="nc bnc" id="L581" title="All 2 branches missed.">                                while (currentLine14 != null){</span>
+<span class="nc" id="L582">                                    System.out.println(currentLine14);</span>
+<span class="nc" id="L583">                                    currentLine14 = br.readLine();</span>
+                                }
+<span class="nc" id="L585">                                bw.close();</span>
+<span class="nc" id="L586">                                fw.close();</span>
+                                
+<span class="nc" id="L588">                            } catch (Exception e) {</span>
+<span class="nc" id="L589">                                e.getMessage();</span>
+<span class="nc" id="L590">                            }</span>
+<span class="nc" id="L591">                            break;</span>
+
+
+
+                    case 15 :
+                        
+<span class="nc" id="L597">                        System.exit(0);</span>
+                    
+}
+       
+       
+       
+<span class="nc" id="L603">}</span>
+<span class="nc" id="L604">}</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
